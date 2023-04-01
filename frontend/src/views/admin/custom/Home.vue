@@ -304,7 +304,6 @@ export default {
     margin-right: auto;
     margin-left: auto;
 }
-
 .banner {
     position: relative;
     grid-column-end: span 2;
