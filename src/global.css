@@ -42,12 +42,23 @@
     background-color: #1a8737;
 }
 
+.navMobile{
+  display: none;
+}
+
 @media screen and (max-width: 650px){
 
 .navbar{
     display: none;
 }
-#public{
-    padding-top: 0;
+
+.navMobile{
+  display: block;
 }
+
+#public{
+  padding-top: 0;
+}
+
+
 }

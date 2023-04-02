@@ -5,6 +5,11 @@
             <use href="@/assets/icons/icons.svg#return"></use>
         </svg>
 
+        <svg>
+            <use href="@/assets/icons/icons.svg#upload"></use>
+        </svg>
+
+
         {{ homeColor }}
         <section id="colorTable">
             <h1>TABLE DES COULEURS</h1>

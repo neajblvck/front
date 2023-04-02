@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <!-- faire un caroussel -->
-
     <div class="mainImage">
       <img class="bigImg" :src="hero" alt="">
     </div>
@@ -9,7 +8,6 @@
     <div class="navDown">
       <button class="btnMobile">Commandez</button>
     </div>
-
 
 
     <section class="section-marketing">
@@ -48,7 +46,7 @@ export default {
     return {
       home: {},
       contents: [],
-      hero: "",
+      hero: "http://localhost:3000/images/hero.jpg",
     }
   },
 
@@ -56,8 +54,6 @@ export default {
     customService.getContent()
       .then(res => {
         this.home = res.data.home
-        this.hero = this.home[3].imgPost
-        
       })
       .catch(err => { console.log(err) })
   }
