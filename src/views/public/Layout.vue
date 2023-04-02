@@ -31,7 +31,7 @@ export default{
     text-align: center;
     padding-top: 80px;
     padding-bottom: 40px;
-    background-color: #ffc47a;
+    background-color: #1a8737;
 }
 
 @media screen and (max-width: 650px){
