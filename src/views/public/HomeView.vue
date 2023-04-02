@@ -48,7 +48,7 @@ export default {
     return {
       home: {},
       contents: [],
-      hero: "http://localhost:3000/images/hero.jpg",
+      hero: "",
     }
   },
 
@@ -56,6 +56,7 @@ export default {
     customService.getContent()
       .then(res => {
         this.home = res.data.home
+        this.home[3].imgPost = this.hero
       })
       .catch(err => { console.log(err) })
   }
