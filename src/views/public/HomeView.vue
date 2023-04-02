@@ -56,7 +56,8 @@ export default {
     customService.getContent()
       .then(res => {
         this.home = res.data.home
-        this.home[3].imgPost = this.hero
+        this.hero = this.home[3].imgPost
+        
       })
       .catch(err => { console.log(err) })
   }
