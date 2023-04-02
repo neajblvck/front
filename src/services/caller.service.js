@@ -4,7 +4,7 @@ import router from "@/router"
 
 // URL d'accès à mon serveur
 const Axios = axios.create({
-    baseURL: 'https://newdelice.onrender.com'
+    baseURL: 'https://back-8hi1.onrender.com'
 })
 
 // intercepte la requête et ajoute le token dans l'entête Authorization
