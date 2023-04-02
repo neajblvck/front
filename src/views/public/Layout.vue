@@ -1,7 +1,7 @@
 <template>
     <div id="public">
         <PublicNav/>
-        <sideNav/>
+        <!-- <sideNav/> -->
         <router-view/> 
     </div> 
 </template>
@@ -29,9 +29,8 @@ export default{
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 40px;
-
     background-color: #ffc47a;
 }
 
