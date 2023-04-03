@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import BurgerNav from './BurgerN.vue';
+import BurgerNav from './BurgerNav.vue';
 
 export default {
     name: "NavMobile",
