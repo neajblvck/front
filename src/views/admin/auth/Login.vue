@@ -1,6 +1,7 @@
 <template>
 <div class="admin">
 		<PublicNav/>
+        <BurgerNav/>
 		<h2>Authentification</h2>
 		<form @submit.prevent="login">
 			<label>Email:</label>
@@ -20,6 +21,7 @@
 
 import PublicNav from '@/components/PublicNav.vue';
 import {accountService} from '@/services'
+import BurgerNav from '../../../components/BurgerNav.vue';
 
 export default {
     name: "login",
@@ -42,9 +44,10 @@ export default {
                 .catch(err => console.log(err));
         }
     },
-    components: { 
-		PublicNav 
-	}
+    components: {
+    PublicNav,
+    BurgerNav
+}
 }
 
 </script>

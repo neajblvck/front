@@ -5,7 +5,7 @@
             <h2>Assurez-vous que votre menu est correct</h2>
 
             <div class="content-wrap">
-            </div> 
+             
             <table>
                 <thead>
                     <tr>
@@ -40,6 +40,7 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </template>
@@ -123,12 +124,6 @@ h2{
     color: #444444;
     cursor: pointer;
     margin: 9px;
-}
-
-.admin {
-    margin-top: 85px;
-    background-color: #ffc47a;
-    background: linear-gradient(45deg,#ffba59,#ffd6bd);
 }
 
 .admin-content {

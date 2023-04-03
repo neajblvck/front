@@ -2,7 +2,7 @@
   <div class="home">
     <!-- faire un caroussel -->
     <div class="mainImage">
-      <img class="bigImg" :src="hero" alt="">
+      <img class="bigImg" src="../../assets/img/hero.jpg" alt="">
     </div>
 
     <div class="navDown">
@@ -46,7 +46,7 @@ export default {
     return {
       home: {},
       contents: [],
-      hero: "http://localhost:3000/images/hero.jpg",
+      hero: "",
     }
   },
 
@@ -64,6 +64,13 @@ export default {
 </script>
 
 <style scoped>
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a8737;
+}
 .btnMobile {
   z-index: 9999;
   position: fixed;
@@ -107,13 +114,8 @@ export default {
 }
 
 
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .mainImage {
+  top: -1px;
   position: relative;
   width: 100%;
   padding-bottom: 70%;

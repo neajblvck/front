@@ -1,7 +1,8 @@
 <template>
 <div class="layout">
     <div class="admin">Admin Layout
-    <PublicNav/>
+    <BurgerNav/>
+        ADMIN
     <AdminNav/>
     <router-view/> 
     </div> 
@@ -11,12 +12,14 @@
 <script>
 import PublicNav from '@/components/PublicNav.vue';
 import AdminNav from '@/components/AdminNav.vue';
+import BurgerNav from '@/components/BurgerNav.vue'
 
 export default{
     name: 'PublicLayout',
     components: {
         PublicNav,
         AdminNav,
+        BurgerNav
     }
 
 }
@@ -27,8 +30,9 @@ export default{
 
 .admin {
     margin-top: 85px;
-    background-color: #ffc47a;
-    background: linear-gradient(45deg,#ffba59,#ffd6bd);
+    background-color:#f5ebdc
+    /* background-color: #ffc47a;
+    background: linear-gradient(45deg,#ffba59,#ffd6bd); */
 }
 
 .admin-content {

@@ -32,14 +32,19 @@
     color: white
   }
 
+  html{
+    background-color: #f5ebdc;
+  }
+
+
   #public{
     position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 90px;
     padding-bottom: 40px;
-    background-color: #1a8737;
+    background-color: #f5ebdc;
 }
 
 .navMobile{
@@ -57,7 +62,7 @@
 }
 
 #public{
-  padding-top: 0;
+
 }
 
 
