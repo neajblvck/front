@@ -7,7 +7,7 @@
         <li><router-link class="navBarLink" to="/menu">CARTE</router-link></li>
         <li><router-link class="navBarLink" to="/admin/dashboard">Admin</router-link></li>
       </ul>
-  
+  </div>
   <label>
     <input type="checkbox" v-model="menuIsActive">
     <span class="menu">
@@ -15,7 +15,7 @@
       <img id="logo" src="@/assets/icons/logo.svg">
     </span>
   </label>
-</div>
+
     <div @click="navigation" @wheel.prevent @touchmove.prevent @scroll.prevent :class="{'showNavLink' : menuIsActive}" class="navLink">
       <ul class="ul-link">
         <li><router-link class="link" to="/">Home</router-link></li>
@@ -54,6 +54,27 @@ export default {
   
 <style scoped>
 
+::-webkit-scrollbar {
+  height: 0px;
+  background-color: #00000000;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 255, 0);
+  height: 0;
+}
+
+
+::webkit-scrollbar-corner{
+  background-color: rgba(0, 0, 0, 0);
+  height: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0);
+  height: 0px;
+}
+
 
 #logo {
   width: 128px;
@@ -78,15 +99,16 @@ export default {
 
 .navUl {
   display: flex;
+    width: 66%;
     font-family: 'Subtlecurves';
     font-size: 1.3em;
     list-style: none;
     transition: .3s 0.1s ease-in-out;
     flex-direction: row;
-    align-content: center;
     align-items: center;
     padding: 0;
     margin: 0;
+    overflow: scroll;
     padding: 3% 3% 3% 5%;
 
 }
@@ -97,6 +119,10 @@ export default {
   color: white;
   text-decoration: none;
   user-select: none;
+}
+
+.navUl:last-child{
+  padding-right: 50px;
 }
 
 label .menu {
