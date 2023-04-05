@@ -12,14 +12,15 @@
 <script>
 import PublicNav from '@/components/PublicNav.vue';
 import AdminNav from '@/components/AdminNav.vue';
-import BurgerNav from '@/components/BurgerNav.vue'
+import BurgerNav from '@/components/BurgerNav.vue';
 
 export default{
     name: 'PublicLayout',
     components: {
         PublicNav,
         AdminNav,
-        BurgerNav
+        BurgerNav,
+
     }
 
 }

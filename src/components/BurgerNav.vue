@@ -247,7 +247,7 @@ label input {
 }
 
 label input:checked+.menu {
-  box-shadow: 0 0 0 100vw #1c1c1c00, 0 0 0 100vh #1c1c1ce0;
+  box-shadow: 0 0 0 105vw #1c1c1c00, 0 0 0 105vh #1c1c1ce0;
   border-radius: 100%;
   width: 0;
   height: 0;

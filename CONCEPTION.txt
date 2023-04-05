@@ -1,4 +1,15 @@
 
+
+couleur en haut de l'écran
+#f5ebdc
+
+couleur en bas de l'écran
+#655f5d
+
+
+
+
+
 CONCEPTION
 
 page index relié à l'Api: 
@@ -37,18 +48,38 @@ invité le client à valider sa commande par SMS => préremplissage du SMS avec 
 
 A FAIRE
 
-- vérifier les LABEL et faire attention à ce que chaque id soit unique (binder le for et le name)
-- formulaire: empecher la saisie de caractère non souhaité
-- rôle et authorisation
-- API vérif mail
-- désactiver le hover pour les touch device
+ETAPE I: RENDRE LE SITE FONCTIONNEL AU MINIMUM
+Fonctionnalité à implémenter:
+- changer couleur du site
+- changer image de couverture
+- rédiger le site (titrage+aide)
+- notifications (bulle parlante)
+- réponse aux requêtes 
+- transition & loading
+- ajouter des aides (fenetre modale)
+- footer (info, reseaux, horraires)
 
+
+-----> clarifier CSS (layout pr CSS commun)
+-----> corriger erreur menu -> computed
+-----> formulaire: empecher la saisie de caractère non souhaité
+-----> désactiver le hover pour les touch device
+
+- panier commandes
+- précommande par SMS
+- API vérif mail
+- rôle et authorisation
+- caroussel
+
+
+- vérifier les LABEL et faire attention à ce que chaque id soit unique (binder le for et le name)
 
 
 A FAIRE EN DERNIER
 - night shift
 - coder une aide aux choix façon tinder
-
+- Vuetify
+-horraires
 
 RGPD 
 

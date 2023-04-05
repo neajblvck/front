@@ -12,6 +12,16 @@
     font-style: normal;
   }
 
+
+  html{
+    scroll-behavior:smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  *:focus {
+    scroll-margin: 50px;
+  }
+
   #app {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
@@ -20,13 +30,54 @@
   body{
     overflow-x: hidden;
   }
+
+  @media screen and (max-width: 767px) {
+    /* définition de la couleur de fond pour la barre de navigation */
+
+
+    body {
+
+      /* a  modifier et a appliquer seulement quand menuIsActived*/
+      background-color: #1c1c1cf9;
+      padding-top: env(safe-area-inset-top);
+
+
+      /* pour supprimer la scroll bar*/
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      overflow: -moz-scrollbars-none;  /* Firefox */
+
+
+    }
+  
+    /* masquage de la barre de navigation */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: env(safe-area-inset-top);
+      background: #f5ebdc;
+    }
+
+  }
+
+  
+  /* Masquer la scrollbar verticale pour Chrome, Safari et Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
   
   h1{
+    user-select: none;
     font-family: 'Subtlecurves';
     color: white
   }
 
   h2{
+    user-select: none;
     font-family: 'Anton';
     font-size: 1em;
     color: white

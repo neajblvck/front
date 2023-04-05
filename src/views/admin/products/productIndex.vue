@@ -93,38 +93,6 @@ export default {
     width: 80px;
 }
 
-.circle {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.green {
-  background-color: green;
-}
-
-.red {
-  background-color: red;
-}
-
-
-
-
-h2{
-    font-family: anton;
-    text-transform: uppercase;
-    font-size: 35px;
-    color: #1c1c1c;
-    padding-bottom: 0;
-    border-bottom: solid 3px #1c1c1c;
-}
-
-.icon{
-    color: #444444;
-    cursor: pointer;
-    margin: 9px;
-}
 
 .admin-content {
     box-sizing: border-box;
@@ -197,11 +165,7 @@ tbody tr:nth-child(even) {
     transition: 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #ffbd6c;
-    box-shadow: inset 0px 1px 0px 1px #ffffff5e, inset 0px -1px 0px 1px #0000003b, 0px 4px 2px #11111199;
-    transform: scale(1.1);
-}
+
 
 .delete {
     background-color: #f65151;
@@ -210,4 +174,20 @@ tbody tr:nth-child(even) {
 .delete:hover {
     background-color: #ff7b7b;
 }
+
+@media (min-width: 769px) {
+
+
+    .btn:hover {
+    background-color: #ffbd6c;
+    box-shadow: inset 0px 1px 0px 1px #ffffff5e, inset 0px -1px 0px 1px #0000003b, 0px 4px 2px #11111199;
+    transform: scale(1.1);
+}
+
+}
+
+
+
+
+
 </style> 

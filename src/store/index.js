@@ -25,6 +25,8 @@ state: {
 
 },
 getters: {
+
+    
   
 },
 mutations: {

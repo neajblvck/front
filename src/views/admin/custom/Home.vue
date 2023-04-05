@@ -397,11 +397,7 @@ export default {
     right: 2%;
 }
 
-.btn:hover {
-    background-color: #ffbd6c;
-    box-shadow: inset 0px 1px 0px 1px #ffffff5e, inset 0px -1px 0px 1px #0000003b, 0px 4px 2px #11111199;
-    transform: scale(1.1);
-}
+
 
 
 .home {
@@ -502,7 +498,7 @@ export default {
 }
 
 .card-title {
-    padding: 0;
+    padding: 10px;
     border-radius: 0;
     display: flex;
     font-family: 'Subtlecurves';
@@ -522,7 +518,7 @@ export default {
     border-radius: 0;
     cursor: pointer;
     display: block;
-    padding: 0;
+    padding: 10px;
     width: 100%;
     font-family: 'Anton';
     text-align: start;
@@ -535,8 +531,7 @@ export default {
     width: 100%;
     border-radius: 12px;
     background-color: #ffd3b4;
-    padding: 10px;
-    transition: all 0.30s ease;
+    transition: all 0.5s ease-out;
 }
 
 .btn-textarea {
@@ -567,6 +562,14 @@ export default {
     .swatch {
         grid-column-end: span 2;
     }
+
+
+
+    .btn:hover {
+    background-color: #ffbd6c;
+    box-shadow: inset 0px 1px 0px 1px #ffffff5e, inset 0px -1px 0px 1px #0000003b, 0px 4px 2px #11111199;
+    transform: scale(1.1);
+}
 
 }
 </style>

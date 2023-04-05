@@ -2,7 +2,7 @@
   <div class="home">
     <!-- faire un caroussel -->
     <div class="mainImage">
-      <img class="bigImg" src="../../assets/img/hero.jpg" alt="">
+      <img class="bigImg" src="../../assets/img/hero2.jpg" alt="">
     </div>
 
     <div class="navDown">
@@ -69,7 +69,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1a8737;
+  background-color: #d82201;
 }
 .btnMobile {
   z-index: 9999;

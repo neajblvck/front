@@ -73,6 +73,8 @@ export default {
 
     computed: {
 
+        
+
         filteredProducts() {
             let filteredByCategory = [];
             if (this.selectedCategories.length === 0) {
@@ -210,10 +212,6 @@ export default {
     user-select: none;
 }
 
-.switch input:hover+span {
-    background-color: #ffbd6c;
-    transform: scale(1.1);
-}
 
 .switch input:checked+span {
     background-color: #ffbd6c;
@@ -367,11 +365,15 @@ export default {
         width: calc(33% - 18px);
         margin: 8px;
     }
+
+    .switch input:hover+span {
+    background-color: #ffbd6c;
+    transform: scale(1.1);
+}
 }
 
 /*-------------- SCREEN supérieur 960 -------------*/
 @media screen and (min-width: 960px) {
-
     .produit {
         width: calc(25% - 20px);
         margin: 8px;
