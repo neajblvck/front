@@ -1,16 +1,26 @@
 <template>
   {{ menuIsActive }}
-  <!-- <label> -->
-  <div class="move" ref="roundDiv" @mousedown.prevent="startDrag"
+
+  <div class="move" ref="roundDiv" @mousedown.prevent.stop="startDrag"
     @touchstart.prevent="startDragTouch" @touchmove.prevent="doDragTouch" @touchend="endDragTouch">
 
-    <!-- <input @click.stop="test('input')" type="checkbox" v-model="menuIsActive"> -->
     <span class="menu" :class="{ 'shadowMenu': menuIsActive }">
       <span class="exit" :class="{ 'halbaxit': menuIsActive }"></span>
       <img class="logo" src="@/assets/icons/logo.svg" :class="{ 'halba': menuIsActive }">
     </span>
   </div>
-  <!-- </label> -->
+
+  <div class="navBar">
+    <ul class="navUl" v-show="!menuIsActive">
+      <li><router-link class="navBarLink" to="/">Home</router-link></li>
+      <li><router-link class="navBarLink" to="/menu">CARTE</router-link></li>
+      <li><router-link class="navBarLink" to="/admin/dashboard">Admin</router-link></li>
+      <li><router-link class="navBarLink" to="/">Home</router-link></li>
+      <li><router-link class="navBarLink" to="/menu">CARTE</router-link></li>
+      <li><router-link class="navBarLink" to="/admin/dashboard">Admin</router-link></li>
+    </ul>
+  </div>
+
 
 
   <div @click="navigation" @wheel.prevent @touchmove.prevent @scroll.prevent :class="{ 'showNavLink': menuIsActive }"
@@ -27,7 +37,6 @@
 </template>
   
 <script>
-import { exportDefaultSpecifier } from '@babel/types'
 
 export default {
   name: "newdeliceNav",
@@ -52,14 +61,11 @@ export default {
 
   methods: {
 
-    toggleMenu() {
-      this.menuIsActive = !this.menuIsActive
-    },
-
     navigation() {
       this.menuIsActive = false
     },
     startDrag(event) {  
+
       this.xDetectClick = event.clientX
       this.yDetectClick = event.clientY
 
@@ -72,6 +78,7 @@ export default {
       }
     },
     startDragTouch(event) {
+
       this.xDetectTouch = event.touches[0].clientX
       this.yDetectTouch = event.touches[0].clientY
       this.initialX = event.touches[0].clientX - this.xOffset;
@@ -93,6 +100,7 @@ export default {
     },
     doDragTouch(event) {
 
+
       if (this.isDragging) {
         this.currentX = event.touches[0].clientX - this.initialX;
         this.currentY = event.touches[0].clientY - this.initialY;
@@ -102,11 +110,12 @@ export default {
       }
     },
     endDrag(event) {
+   
       this.isDragging = false;
       if (
         this.xDetectClick === event.clientX
         && this.yDetectClick === event.clientY
-        ){this.menuIsActive = true, console.log('la')}
+        ){this.menuIsActive = !this.menuIsActive}
 
       this.initialX = event.clientX - this.xOffset;
       this.initialY = event.clientY - this.yOffset;
@@ -114,22 +123,21 @@ export default {
       document.removeEventListener("mousemove", this.doDrag);
       document.removeEventListener("mouseup", this.endDrag)
 
-
-
     },
 
     endDragTouch(event) {
       this.isDragging = false;
       if (this.xDetectTouch === event.changedTouches[0].clientX
       && this.yDetectTouch === event.changedTouches[0].clientY){
-        this.menuIsActive = true
+        this.menuIsActive = !this.menuIsActive
       }
       this.initialX = event.changedTouches[0].clientX;
       this.initialY = event.changedTouches[0].clientY;
-
+      
       document.removeEventListener("touchmove", this.doDragTouch)
       document.removeEventListener("touchend", this.endDragTouch)
 
+      
 
     },
     setTranslate(xPos, yPos, el) {
@@ -140,6 +148,59 @@ export default {
 </script>
   
 <style scoped>
+
+.navBar {
+  z-index: 9;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  height: 110px;
+  background-image: linear-gradient(180deg, #000000 -30%, #21212100);
+  display: flex;
+  /* TEST */
+  overflow-x: scroll;
+}
+
+.navUl {
+  display: flex;
+  width: 66%;
+  font-family: 'Subtlecurves';
+  font-size: 1.3em;
+  list-style: none;
+  transition: .3s 0.1s ease-in-out;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  overflow: scroll;
+  padding: 3% 3% 3% 5%;
+
+}
+
+
+.navUl li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navBarLink {
+  color: white;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  /* background-color: #1c1c1c8a; */
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+.navUl:last-child {
+  padding-right: 50px;
+}
+
+
+
 ::-webkit-scrollbar {
   height: 0px;
   background-color: #00000000;
@@ -162,94 +223,90 @@ export default {
   height: 0px;
 }
 
-
-.logo {
-  pointer-events: none;
-  width: 120%;
-  position: absolute;
-  top: 50%;
-  translate: -49% -50%;
-  left: 50%;
-  transform: rotate(16deg);
-  transition: 0.5s ease-in-out;
-  opacity: 1;
-}
-
 .move {
-  z-index: 100;
-  width: 104px;
-  height: 69px;
-  border-radius: 28px 28px 28px 28px;
-  background: #1c1c1c00;
-  /* box-shadow: -1px 1px 9px 0px #0000007d, 0 0 0 0 #000; */
-  position: fixed;
-  transition: opacity 0.4s ease-in-out;
-  margin: 30px;
-  translate: 0.2 ease;
-  cursor: pointer;
+  top: -11px;
+    right: 0;
+    position: relative;
+    z-index: 100;
+    width: 104px;
+    height: 69px;
+    border-radius: 28px 28px 28px 28px;
+    background: #1c1c1c00;
+    /* box-shadow: -1px 1px 9px 0px #0000007d, 0 0 0 0 #000; */
+    position: fixed;
+    /* transition: opacity 2s ease-in-out; */
+    margin: 30px;
+    cursor: pointer;
 }
 
 
 
 
 .menu {
-  pointer-events: none;
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #1C1C1C;
-  border-radius: 28px 28px 28px 28px;
-  transition: 0.3s ease;
-  transition: 0.3s ease-in-out;
-  box-shadow: -1px 1px 9px 0px #0000007d, 0 0 0 0 #000;
-  cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 104px;
+    height: 69px;
+    background: #1c1c1c;
+    border-radius: 28px 28px 28px 28px;
+    /* transition: opacity 0.3s ease; */
+    transition: 0.4s ease-in-out;
+    box-shadow: -1px 1px 9px 0px #0000007d, 0 0 0 0 #000;
+    cursor: pointer;
+    pointer-events: none;
 }
 
 .shadowMenu {
   box-shadow: 0 0 0 105vw #1c1c1c00, 0 0 0 105vh #1c1c1ce0;
-  border-radius: 100%;
-  width: 0;
-  height: 0;
-  /* bottom: 50%; */
-  transform: rotate(90deg);
-  top: 50%;
-  left: 50%;
-  /* background-color: white; */
-  translate: -50% -50%;
+    border-radius: 100%;
+    width: 0;
+    height: 0;
 
 }
 
+.logo {
+    pointer-events: none;
+    width: 128px;
+    position: absolute;
+    top: 37px;
+    right: -77px;
+    translate: -50% -50%;
+    transform: rotate(16deg);
+    transition: 0.5s ease-in-out;
+    opacity: 1;
+}
 
+.halba {
+  transform: scale(0.0009) rotate(-4deg);
+}
 
 
 .exit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 31px;
-  height: 7px;
-  background: #ffffff;
-  display: block;
-  transform-origin: center;
-  border-radius: 12px;
-  transition: 1s cubic-bezier(0, 0.19, 0.12, 1.02);
-  border-radius: 12px;
-  rotate: 45deg;
-  transform: scale(0.001);
+    
+    position: absolute;
+    top: 31px;
+    right: 35px;
+    width: 31px;
+    height: 7px;
+    background: #ffffff;
+    display: block;
+    transform-origin: center;
+    border-radius: 12px;
+    transition: 1s cubic-bezier(0, 0.19, 0.12, 1.02);
+    border-radius: 12px;
+    rotate: 45deg;
 
 }
 
 .halbaxit {
-  rotate: 2 13;
-  rotate: (2turn);
   opacity: 1;
-  transform: rotate(3turn);
+    transform: rotate(3turn);
 
 }
+
 
 
 .exit:after,
@@ -271,9 +328,7 @@ export default {
   top: 0;
 }
 
-.halba {
-  transform: scale(0.0009) rotate(-4deg);
-}
+
 
 
 
